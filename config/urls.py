@@ -16,12 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from my_app.views import index, about, hello, add
+from movies.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
-    path('about/', about),
-    path('hello/<str:first_name>', hello),
-    path('add/<int:num1>/<int:num2>', add),
 ]
