@@ -1,6 +1,13 @@
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render, HttpResponse
 
 # Create your views here.
 
+
 def index(request):
-    return HttpResponse('My Fav Movies')
+    return render(request, 'movies/index.html', {})
+
+# app/templates/app/index.html
+
+
+def about(request):
+    return render(request, 'movies/about.html')
