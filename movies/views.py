@@ -4,7 +4,10 @@ from django.shortcuts import render, HttpResponse
 
 
 def index(request):
-    return render(request, 'movies/index.html', {})
+    context = {
+        'movies':['gladiator','anything','test']
+    }
+    return render(request, 'movies/index.html', context)
 
 # app/templates/app/index.html
 

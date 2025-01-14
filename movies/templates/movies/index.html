@@ -10,7 +10,21 @@
 <body>
     <h1>
         My Fav Movies
-    </h1>
+    </h1> 
+    {% if movies %}
+    <ul>
+        {% load static %}
+        <img style="width: 300px;height: 300px;" src="{% static 'movies/img-1.jpg' %}" alt="image test" />
+        {% for movie in movies %}
+        <li>{{movie|title}}</li>
+
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>no fav movies</p>
+    {% endif %}
+
+
 </body>
 
 </html>
