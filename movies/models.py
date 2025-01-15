@@ -15,4 +15,4 @@ class JobPosting(models.Model):
 
 # command for migration
 # make migration =>> python manage.py makemigrations
-# migration
+# migration => pyhthon manage.py migrate
