@@ -11,8 +11,16 @@ class JobPosting(models.Model):
     description = models.TextField()
     company = models.CharField(max_length=100)
     salary = models.IntegerField()
-
+    is_active = models.BooleanField(default=False)
+    
 
 # command for migration
 # make migration =>> python manage.py makemigrations
 # migration => pyhthon manage.py migrate
+
+
+# CRUD Operations
+# create
+# read
+# update
+# delete
