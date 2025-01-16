@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, get_object_or_404
 
 from .models import JobPosting
 # Create your views here.
@@ -18,7 +18,9 @@ from .models import JobPosting
 
 
 def index(request):
-    active_posting = JobPosting.objects.filter(is_active=True)
+    # active_posting = JobPosting.objects.filter(is_active=True)
+    active_posting = JobPosting.objects.exclude(company = 'gonbadkabud')
+    print('posting ->', active_posting)
     context = {
         'job_postings': active_posting
     }
@@ -27,7 +29,8 @@ def index(request):
 
 
 def job_detail(request, pk):
-    job_posting = JobPosting.objects.get(pk=pk)
+    job_posting = get_object_or_404(JobPosting, pk=pk, is_active=True)
+
     context = {
         'posting': job_posting
     }
